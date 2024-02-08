@@ -22,6 +22,7 @@ MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
 
+LOGIN_URL = 'rango:login'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -46,6 +47,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rango',
 ]
+
+PASSWORD_HASHERS = (
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -129,4 +135,3 @@ USE_TZ = True
 STATICFILES_DIRS = [STATIC_DIR, ]
 STATIC_URL = '/static/'
 
-#'/Users/edwinbarnes/Workspace/tango_with_django_project/tango_with_django_project/static', 
